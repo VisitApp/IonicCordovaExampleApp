@@ -41,7 +41,6 @@
     "@angular/compiler": "^16.0.0",
     "@angular/compiler-cli": "^16.0.0",
     "@angular/language-service": "^16.0.0",
-    "@chinmay.dash/test-plugin": "file:../../CordovaProjects/TestPlugin",
     "@ionic/angular-toolkit": "^9.0.0",
     "@types/jasmine": "~4.3.0",
     "@types/node": "^12.11.1",
@@ -82,7 +81,6 @@
       "cordova-plugin-camera": {
         "ANDROIDX_CORE_VERSION": "1.6.+"
       },
-      "com.chinmay.testplugin": {},
       "cordova-plugin-inappbrowser": {},
       "info.plugin.fitness": {}
     },
