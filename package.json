@@ -25,7 +25,6 @@
     "@awesome-cordova-plugins/core": "^6.3.0",
     "@ionic/angular": "^7.0.0",
     "@ionic/cordova-builders": "^10.0.0",
-    "cordova-android": "12.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -42,13 +41,16 @@
     "@angular/compiler": "^16.0.0",
     "@angular/compiler-cli": "^16.0.0",
     "@angular/language-service": "^16.0.0",
+    "@chinmay.dash/test-plugin": "file:../../CordovaProjects/TestPlugin",
     "@ionic/angular-toolkit": "^9.0.0",
     "@types/jasmine": "~4.3.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
+    "cordova-android": "^12.0.0",
     "cordova-plugin-camera": "github:jalios/cordova-plugin-camera",
     "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-inappbrowser": "^5.0.0",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^5.0.0",
     "cordova-plugin-splashscreen": "5.0.2",
@@ -57,6 +59,7 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
+    "info.plugin.fitness": "file:../../CordovaProjects/CordovaSamplePluginAndroid/CordavaFitnessPlugin",
     "jasmine-core": "~4.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.4.0",
@@ -78,7 +81,10 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-camera": {
         "ANDROIDX_CORE_VERSION": "1.6.+"
-      }
+      },
+      "com.chinmay.testplugin": {},
+      "cordova-plugin-inappbrowser": {},
+      "info.plugin.fitness": {}
     },
     "platforms": [
       "android"
