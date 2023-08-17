@@ -28,6 +28,8 @@
         <allow-navigation href="https://star-health.getvisitapp.xyz/*" />
         <allow-navigation href="https://api.samuraijack.xyz/*" />
         <allow-navigation href="https://web.getvisitapp.xyz/*" />
+        <allow-navigation href="https://itgi.getvisitapp.xyz/*" />
+        <allow-navigation href="https://itgi.getvisitapp.com/*" />
         <allow-navigation href="*/*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />

@@ -14,27 +14,25 @@
     </ion-toolbar>
   </ion-header>
 
-  <p>Counter: {{counter}}</p>
+  <ion-list>
+    <ion-item-divider>
+      <ion-label> Section A </ion-label>
+    </ion-item-divider>
 
-  <ion-button (click)="increaseCounter()">Click me</ion-button>
+    <ion-item>
+      <ion-textarea rows="15" label="ITGI SSO LINK"  labelPlacement="floating" id="itgiSsoLink" [(ngModel)]="itgiLink"/>
+    </ion-item>
 
-  <ion-button (click)="captureImage()">
-    Click Picture
- </ion-button>
- 
- <img [src]="clickedImage" />
+    <ion-item>
+      <ion-button (click)="clearLink()">Clear</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="openVisitApp()">Open Visit</ion-button>
+    </ion-item>
+
+  
+  </ion-list>
 
 
-
-
- <ion-button (click)="addNumber()">Add 2 number</ion-button>
-
- <ion-button (click)="openVisitApp()">Open Visit</ion-button>
-
- <ion-button (click)="openNewActivity()">Open New Activity</ion-button>
- 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 </ion-content>
