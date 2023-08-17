@@ -25,6 +25,7 @@
     "@awesome-cordova-plugins/core": "^6.3.0",
     "@ionic/angular": "^7.0.0",
     "@ionic/cordova-builders": "^10.0.0",
+    "cordova-ios": "7.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -75,8 +76,13 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "info.plugin.fitness": {}
+      "info.plugin.fitness": {
+        "HEALTH_READ_PERMISSION": " ",
+        "HEALTH_WRITE_PERMISSION": " "
+      }
     },
-    "platforms": []
+    "platforms": [
+      "ios"
+    ]
   }
 }

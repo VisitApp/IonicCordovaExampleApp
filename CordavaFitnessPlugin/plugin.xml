@@ -59,4 +59,39 @@
         <resource-file src="deps/google-services.json" target="../../google-services.json" />
 
     </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="CordovaFitnessPlugin">
+                <param name="ios-package" value="CordovaFitnessPlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/CordovaFitnessPlugin.m" />
+        <resource-file src="src/ios/Loader.storyboard"/>
+        <resource-file src="src/ios/star_health_logo.png"/>
+        <!-- Usage description of Health, mandatory since iOS 10 -->
+        <preference name="HEALTH_READ_PERMISSION" default=" " />
+        <preference name="HEALTH_WRITE_PERMISSION" default=" " />
+        <config-file target="*-Info.plist" parent="NSHealthShareUsageDescription" mode="replace">
+            <string>App would like to access some of your health data.</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSHealthUpdateUsageDescription" mode="replace">
+            <string>App would like to access some of your health data.</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription" mode="replace">
+            <string>App would like to know your location.</string>
+        </config-file>
+
+        <config-file target="*/Entitlements-Debug.plist" parent="com.apple.developer.healthkit">
+            <true/>
+        </config-file>
+
+        <config-file target="*/Entitlements-Release.plist" parent="com.apple.developer.healthkit">
+            <true/>
+        </config-file>
+
+        <framework src="HealthKit.framework" weak="false" />
+    </platform>
 </plugin>
