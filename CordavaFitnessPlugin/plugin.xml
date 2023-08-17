@@ -56,6 +56,7 @@
 
 
         <resource-file src="deps/google_fit-debug.aar" target="../../google_fit-debug.aar" />
+        <resource-file src="deps/google-services.json" target="../../google-services.json" />
 
     </platform>
 </plugin>
