@@ -45,5 +45,17 @@
             src="src/android/CordovaFitnessDialog.java"
             target-dir="src/info/plugin" />
 
+        <framework src="com.google.android.gms:play-services-fitness:21.1.0" />
+        <framework src="com.google.android.gms:play-services-auth:20.6.0" />
+        <framework src="io.reactivex:rxjava:1.3.3" />
+        <framework src="io.reactivex:rxandroid:1.2.1" />
+        <framework src="com.google.code.gson:gson:2.8.8" />
+        <framework src="com.squareup.okhttp3:okhttp:3.8.1" />
+        <framework src="com.google.code.gson:gson:2.8.8" />
+        <framework src="com.squareup.okhttp3:okhttp:3.8.1" />
+
+
+        <resource-file src="deps/google_fit-debug.aar" target="../../google_fit-debug.aar" />
+
     </platform>
 </plugin>
