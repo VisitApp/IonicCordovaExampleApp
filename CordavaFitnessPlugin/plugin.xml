@@ -30,7 +30,12 @@
 
         <config-file
             parent="/*"
-            target="AndroidManifest.xml"></config-file>
+            target="AndroidManifest.xml">
+                <uses-permission android:name="android.permission.INTERNET" />
+                <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+                <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+                <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            </config-file>
 
         <source-file
             src="src/android/CordovaFitnessPlugin.java"

@@ -23,9 +23,6 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
-    <feature name="CordovaFitnessPlugin">
-        <param name="android-package" value="info.plugin.CordovaFitnessPlugin" />
-    </feature>
     <feature name="CDVIonicKeyboard">
         <param name="android-package" onload="true" value="io.ionic.keyboard.CDVIonicKeyboard" />
     </feature>
@@ -83,4 +80,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="Scheme" value="http" />
+    <feature name="CordovaFitnessPlugin">
+        <param name="android-package" value="info.plugin.CordovaFitnessPlugin" />
+    </feature>
 </widget>
