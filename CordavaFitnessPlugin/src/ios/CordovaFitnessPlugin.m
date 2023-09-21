@@ -13,14 +13,10 @@ API_AVAILABLE(ios(13.0))
     NSCalendar* calendar;
     NSString *gender;
     NSUInteger bmrCaloriesPerHour;
-    UIStoryboard* storyboard;
-    UIViewController * sbViewController;
-    UIActivityIndicatorView *activityIndicator;
     NSString *token;
     NSTimeInterval gfHourlyLastSync;
     NSTimeInterval googleFitLastSync;
     HKHealthStore *healthStore;
-    UIViewController * storyboardVC;
     NSString* callbackId;
     BOOL hasLoadedOnce;
 }
@@ -817,20 +813,6 @@ API_AVAILABLE(ios(13.0))
         }];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))] && object == webView) {
-        NSLog(@"%f", webView.estimatedProgress);
-        // estimatedProgress is a value from 0.0 to 1.0
-        // Update your UI here accordingly
-        if(webView.estimatedProgress>0.99){
-            [activityIndicator stopAnimating];
-            [self.viewController dismissViewControllerAnimated:NO completion:^{
-                NSLog(@"Storyboard dismissed");
-            }];
-        }
-    }
-}
-
 -(void) pluginInitialize {
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
@@ -842,16 +824,6 @@ API_AVAILABLE(ios(13.0))
 }
 
 - (void)open:(CDVInvokedUrlCommand*)command {
-    storyboard = [UIStoryboard storyboardWithName:@"Loader" bundle:nil];
-    sbViewController = [storyboard instantiateInitialViewController];
-    sbViewController.modalPresentationStyle = 0;
-    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
-    activityIndicator.center = sbViewController.view.center;
-    activityIndicator.color = UIColor.linkColor;
-    [sbViewController.view addSubview:activityIndicator];
-    [activityIndicator startAnimating];
-    [self.viewController presentViewController:sbViewController animated:false completion:nil];
-    [webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:NSKeyValueObservingOptionNew context:NULL];
     calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
     calendar.timeZone = [NSTimeZone timeZoneWithName:@"IST"];
     [self.viewController.view addSubview:webView];
@@ -860,7 +832,7 @@ API_AVAILABLE(ios(13.0))
     CDVPluginResult *pluginResult = nil;
     callbackId = command.callbackId;
     NSString *magicLink = [command.arguments objectAtIndex:0];
-    NSLog(@"magicLink is %@",magicLink)
+    NSLog(@"magicLink is %@",magicLink);
     NSURL *url = [NSURL URLWithString:magicLink];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
     dispatch_async(dispatch_get_main_queue(), ^{

@@ -67,8 +67,6 @@
             </feature>
         </config-file>
         <source-file src="src/ios/CordovaFitnessPlugin.m" />
-        <resource-file src="src/ios/Loader.storyboard"/>
-        <resource-file src="src/ios/star_health_logo.png"/>
         <!-- Usage description of Health, mandatory since iOS 10 -->
         <preference name="HEALTH_READ_PERMISSION" default=" " />
         <preference name="HEALTH_WRITE_PERMISSION" default=" " />
