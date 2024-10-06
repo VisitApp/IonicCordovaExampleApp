@@ -26,23 +26,21 @@
             </feature>
         </config-file>
 
-        
 
         <config-file
             parent="/*"
             target="AndroidManifest.xml">
-                <uses-permission android:name="android.permission.INTERNET" />
-                <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-                <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-                <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-            </config-file>
+
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+        </config-file>
 
         <source-file
             src="src/android/CordovaFitnessPlugin.java"
-            target-dir="src/info/plugin" />
-
-        <source-file
-            src="src/android/CordovaFitnessDialog.java"
             target-dir="src/info/plugin" />
 
         <framework src="com.google.android.gms:play-services-fitness:21.1.0" />
@@ -54,42 +52,10 @@
         <framework src="com.google.code.gson:gson:2.8.8" />
         <framework src="com.squareup.okhttp3:okhttp:3.8.1" />
 
+        <resource-file src="deps/google_fit-debug.aar" target="libs/google_fit-debug.aar" />
 
-        <resource-file src="deps/google_fit-debug.aar" target="../../google_fit-debug.aar" />
-        <resource-file src="deps/google-services.json" target="../../google-services.json" />
+        <framework src="plugin-settings.gradle" custom="true" type="gradleReference" />
 
-    </platform>
 
-    <platform name="ios">
-        <config-file parent="/*" target="config.xml">
-            <feature name="CordovaFitnessPlugin">
-                <param name="ios-package" value="CordovaFitnessPlugin" />
-            </feature>
-        </config-file>
-        <source-file src="src/ios/CordovaFitnessPlugin.m" />
-        <!-- Usage description of Health, mandatory since iOS 10 -->
-        <preference name="HEALTH_READ_PERMISSION" default=" " />
-        <preference name="HEALTH_WRITE_PERMISSION" default=" " />
-        <config-file target="*-Info.plist" parent="NSHealthShareUsageDescription" mode="replace">
-            <string>App would like to access some of your health data.</string>
-        </config-file>
-
-        <config-file target="*-Info.plist" parent="NSHealthUpdateUsageDescription" mode="replace">
-            <string>App would like to access some of your health data.</string>
-        </config-file>
-
-        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription" mode="replace">
-            <string>App would like to know your location.</string>
-        </config-file>
-
-        <config-file target="*/Entitlements-Debug.plist" parent="com.apple.developer.healthkit">
-            <true/>
-        </config-file>
-
-        <config-file target="*/Entitlements-Release.plist" parent="com.apple.developer.healthkit">
-            <true/>
-        </config-file>
-
-        <framework src="HealthKit.framework" weak="false" />
     </platform>
 </plugin>
