@@ -38,14 +38,11 @@ public class CordovaFitnessPlugin extends CordovaPlugin {
 
         if (action.equals("open")) {
             String magicLink = args.getString(0);
-            String default_client_id = args.getString(1);
 
             Log.d(TAG, "magicLink: " + magicLink);
-            Log.d(TAG, "default_client_id: " + default_client_id);
 
             Intent intent = new Intent(cordova.getActivity(), CordovaFitnessActivity.class);
             intent.putExtra("ssoLink", magicLink);
-            intent.putExtra("default_client_id", default_client_id);
             if (this.cordova != null) {
                 this.cordova.startActivityForResult((CordovaPlugin) this, intent, 0);
             }
